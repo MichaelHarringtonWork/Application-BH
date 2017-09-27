@@ -2,19 +2,14 @@ var kafka = require('kafka-node');
 var Consumer = kafka.Consumer,
         client = new kafka.Client('129.146.69.162:9092'), //Oracle Bloodhound Kafka bootstrap server address  
         consumer = new Consumer(
-        client, [{topic: 'bhdata', partition: 0}], {autoCommit: false}); //specify the topic and partition.
+        client, [{topic: 'bhdata', partition: 0}], {autoCommit: false, fetchMaxWaitMs:1000, fetchMaxBytes:1024*1024}), //specify the topic and partition.
+        offset = new Offset(client);
 
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
 var BHDATA;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.use(express.static("./public_html"));
-app.use(cors());
 
 consumer.on('connection', function(){ //log when a connection to the kafka server is established
    console.log('Connection to Kafka established'); 
@@ -31,6 +26,12 @@ consumer.on('message', function(message){
 consumer.on('error', function(err){
     console.log('error', err);
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(express.static("./public_html"));
+app.use(cors());
 
 function sendData(bhdata) {
     wss.broadcast(JSON.stringify(bhdata));
