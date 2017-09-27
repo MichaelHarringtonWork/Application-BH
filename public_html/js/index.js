@@ -947,7 +947,7 @@ Highcharts.chart('fuel', {
             },
             title: {
                 text: "FUEL",
-                className: 'fueltitle'
+                className: 'fueltitle',
                 style: {
                     color: '#fff',
                     font: '11px Trebuchet MS, Verdana, sans-serif'
