@@ -1017,9 +1017,8 @@ var bar = new ProgressBar.Circle(rocket, {
     if (value === 0) {
       circle.setText('ROCKET');
     } else {
-      circle.setText(value + "%" + " ROCKET");
+      circle.setText(value + "%" + " ROCKET");               //********************
     }
-
   }
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
@@ -1045,11 +1044,11 @@ var bar = new ProgressBar.Circle(machno, {
     circle.path.setAttribute('stroke', state.color);
     circle.path.setAttribute('stroke-width', state.width);
 
-    var value = Math.round(circle.value() * 100);
-    if (value === 0) {
+    //var value = Math.round(circle.value() * 100);
+    if (true) {
       circle.setText('MACH NO.');
     } else {
-      circle.setText(value + " MACH NO.");
+      circle.setText(this.MachNo + " MACH NO.");                 //********************
     }
 
   }
@@ -1077,11 +1076,11 @@ var bar = new ProgressBar.Circle(nl, {
     circle.path.setAttribute('stroke', state.color);
     circle.path.setAttribute('stroke-width', state.width);
 
-    var value = Math.round(circle.value() * 133);
-    if (value === 0) {
+    //var value = Math.round(circle.value() * 133);
+    if (true) {
       circle.setText('');
     } else {
-      circle.setText(value + " NL");
+      circle.setText(this.NL + " NL");                        //********************
     }
 
   }
@@ -1107,11 +1106,11 @@ var bar = new ProgressBar.SemiCircle(aj, {
   // Set default step function for all animate calls
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
-    var value = Math.round(bar.value() * 200);
-    if (value === 0) {
+    //var value = Math.round(bar.value() * 200);
+    if (true) {
       bar.setText('AJ');
     } else {
-      bar.setText(value + " AJ");
+      bar.setText(this._AJ + " AJ");                           //********************
     }
 
     bar.text.style.color = state.color;

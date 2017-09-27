@@ -21,7 +21,7 @@ consumer.on('connection', function(){
 
 consumer.on('message', function(message){
     var bhdata = JSON.parse(message.value);
-    console.log("KAFKA SAYS");
+    console.log("KAFKA SAYS...");
     console.log(bhdata);
     this.BHDATA = bhdata;
     sendData(this.BHDATA);
