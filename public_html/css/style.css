@@ -119,14 +119,20 @@
   float: left;
   margin: -131% 0% 0% 21%; 
   position: relative;
+  background: black;            
 }
 
 #aj {
   width: 10%;
   height: 10%;
-  left: 21.5%;
-  margin-bottom: 65%;
+  left: 21.1%;
+  margin-bottom: 125.2%;
   position: relative;
+    z-index: 1;
+}
+
+ajnlgauge{
+    margin: 0% 0% 30% 0%;
 }
 
 .rockettext {
@@ -156,8 +162,13 @@ margin: 0 auto;
 }
 
 .right-pane {
-width: 10%;
+width: 80%;
 height: 40vw;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(180deg);
 position: relative;
 float: left;
 margin: -100% 0% 0% 80%;
@@ -352,6 +363,8 @@ svg #rocketbar {
   -ms-user-select: none;
   user-select: none;
 }
+
+
 
 /*.gauge .domain {
   stroke-width: 4px;
@@ -879,17 +892,18 @@ svg #ajbar {
   stroke-width: 20px;
 }
 
+
 .tbt-percentage {
   position: relative;
-  bottom: 198px;
-  left: 25px;
+  width: 7%;
+  z-index: -1;
   white-space: pre;
   text-align: center;
-  transform: translateY(-50%);
   font-weight: bold;
-  font-size: 15px;
+  font-size: 1vw;
   color: #cd6700;
   font-family: helvetica, sans-serif;
+  margin-top: -220%; 
 }
 
 .nh-percentage {
@@ -905,6 +919,7 @@ svg #ajbar {
   font-family: helvetica, sans-serif;
 }
 
+/*
 .catpack {
   position: relative;
   bottom: 260px;
@@ -917,6 +932,7 @@ svg #ajbar {
   color: #0086ac;
   font-family: helvetica, sans-serif;
 }
+*/
 
 #canvas-id {
   position: relative;
@@ -1053,10 +1069,7 @@ svg #ajbar {
 */
 
 .distancegauge {
-            font-size: 20vw;
-            position: relative;
-            width: 10%;
-            height: 20vw;
+            font-size: 12px;
         }
 
         .distancegauge .axis path,
